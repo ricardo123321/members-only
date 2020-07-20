@@ -1,0 +1,544 @@
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200720193214)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200720193214"]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-20 19:43:05.673081"], ["updated_at", "2020-07-20 19:43:05.673081"]]
+  [1m[35m (17.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20200720194728)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200720194728"]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-07-20 12:56:40 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActionController::RoutingError - uninitialized constant PostController
+Did you mean?  PostsController:
+
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:56:41 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:56:56 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:56:57 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:56:57 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:56:57 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:56:58 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:56:58 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:08 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:09 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:10 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:13 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:17 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:19 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:20 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:22 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:22 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:23 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:23 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:24 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:39 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:41 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:57:49 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:22 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:23 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:24 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:25 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:26 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:27 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:28 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:28 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:29 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:29 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:30 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:31 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:31 -0700
+Started POST "/__better_errors/ea64ecb11d2df8d8/variables" for 127.0.0.1 at 2020-07-20 12:58:34 -0700
+Started GET "/" for 127.0.0.1 at 2020-07-20 13:01:07 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActionController::RoutingError - uninitialized constant PostController
+Did you mean?  PostsController:
+
+Started POST "/__better_errors/3ee7cc3fb9b0f6fd/variables" for 127.0.0.1 at 2020-07-20 13:01:07 -0700
+Started POST "/__better_errors/3ee7cc3fb9b0f6fd/variables" for 127.0.0.1 at 2020-07-20 13:01:11 -0700
+Started GET "/" for 127.0.0.1 at 2020-07-20 13:01:56 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 1559)
+[Webpacker] Compiling...
+Started GET "/" for 127.0.0.1 at 2020-07-20 13:01:59 -0700
+[Webpacker] Compiled all packs in /home/rvt/Documents/GitHub/members-only/members-only/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.43.0
+Time: 5352ms
+Built at: 07/20/2020 1:02:06 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 9796ms (Views: 9722.8ms | ActiveRecord: 0.7ms | Allocations: 35938)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1056)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 1.2ms | Allocations: 5823)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-20 13:02:12 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 650)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 0.2ms | Allocations: 4623)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:02:19 -0700
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms | Allocations: 1449)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-20 13:02:19 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 594)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 130.3ms | Allocations: 23234)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 159ms (Views: 142.4ms | ActiveRecord: 1.5ms | Allocations: 33675)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-07-20 13:02:24 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 119)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 21.4ms | Allocations: 8799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.0ms | Allocations: 13657)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:03:59 -0700
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 297)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-20 13:03:59 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 32.0ms | Allocations: 10979)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.0ms | Allocations: 15222)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-07-20 13:04:02 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 31.6ms | Allocations: 8082)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.0ms | Allocations: 12222)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-07-20 13:04:17 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"8hNh4oAYVxqaz52st1fc8SZylEhHA3fsnQ5RXXcmJD7PT4asN0C1IXsIMP4XOIZ5/BHRETEAvHOoCoSdhlvQgw==", "user"=>{"email"=>"ricardot@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ricardot@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "ricardot@gmail.com"], ["encrypted_password", "$2a$12$eqAFBIJiSbLKGh8jzHPOgOAeRBx/iBNyQr3ySLE5M/W75JocAWVYe"], ["created_at", "2020-07-20 20:04:17.668419"], ["updated_at", "2020-07-20 20:04:17.668419"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/posts/new
+Completed 302 Found in 326ms (ActiveRecord: 6.4ms | Allocations: 12380)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:04:17 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 0.3ms | Allocations: 54015)
+
+
+
+NoMethodError - undefined method `signed_in_only!' for #<PostsController:0x00007f7168922828>
+Did you mean?  signed_in?:
+
+Started POST "/__better_errors/33dd3d631eeb150c/variables" for 127.0.0.1 at 2020-07-20 13:04:18 -0700
+Started GET "/" for 127.0.0.1 at 2020-07-20 13:05:45 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1062)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 21.5ms | ActiveRecord: 0.8ms | Allocations: 6432)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:05:50 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 29.8ms | Allocations: 1252)
+  Rendered posts/new.html.erb within layouts/application (Duration: 31.1ms | Allocations: 1587)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 40.5ms | ActiveRecord: 2.3ms | Allocations: 13641)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-07-20 13:05:55 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"4Jk8QQkuN9FTYHuhG/1I4XTKkSIw9iEgRuUn3WJ+H5WGCZ0XqXJJczgK6NiokVwEf+sKSk+l/0AmHYfkH5w+VA==", "post"=>{"body"=>"pokemon"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.0ms | Allocations: 649)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 731)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 30.0ms | ActiveRecord: 0.2ms | Allocations: 10568)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-07-20 13:06:01 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 643)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 4712)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:06:03 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.0ms | Allocations: 500)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 582)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 12.2ms | ActiveRecord: 0.3ms | Allocations: 6092)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-07-20 13:06:09 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"Np+LbUy2d6ts91eKSHf1dMFTdd8xZxoP1hYjQygEbr9QDyo77OoJCQedxPP7G+GRynLut040xG+27oN6VeZPfg==", "post"=>{"body"=>"rterter"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.6ms | Allocations: 637)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 719)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 7564)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-07-20 13:06:24 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 642)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.1ms | Allocations: 4701)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-20 13:06:36 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 641)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.2ms | Allocations: 4708)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:06:48 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.8ms | Allocations: 500)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 582)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 0.2ms | Allocations: 6096)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-07-20 13:06:58 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"t5sZpj82Iq2nrHc0J7E48l9OTgEI7hbaV1SzZUDTQSPRC7jwn2pcD8zG5E2U3SwXVG/VaXe9yLo3rBNcPTFg4g==", "post"=>{"body"=>"pokemon if horrible"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.0ms | Allocations: 638)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 720)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 11.4ms | ActiveRecord: 0.1ms | Allocations: 7573)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-07-20 13:07:24 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 642)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.1ms | Allocations: 4700)
+
+
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from block in execute at /home/rvt/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281)
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:08:53 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.1ms | Allocations: 500)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 582)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.3ms | ActiveRecord: 0.1ms | Allocations: 6083)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFieldsToUsers (20200720201211)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (27.3ms)[0m  [1m[35mALTER TABLE "users" ADD "name" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "username" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[36mprimary::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200720201211"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (23.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-07-20 13:18:53 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 858)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.7ms | ActiveRecord: 0.3ms | Allocations: 6022)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:18:55 -0700
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-20 13:18:55 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 143)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 20.9ms | Allocations: 11002)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 30.0ms | ActiveRecord: 0.0ms | Allocations: 19477)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-20 13:27:12 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 891)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.4ms | Allocations: 5981)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:27:14 -0700
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 294)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-20 13:27:14 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 514)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 18.3ms | Allocations: 11743)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.0ms | Allocations: 17008)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-20 13:27:23 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 647)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms | Allocations: 4718)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:27:24 -0700
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-20 13:27:24 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 25.7ms | Allocations: 11017)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.0ms | Allocations: 15250)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-20 13:28:31 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 875)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.1ms | Allocations: 5971)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:28:33 -0700
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 284)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-20 13:28:33 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 8693)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 10383)
+
+
+
+ActionView::Template::Error - undefined method `username' for #<User id: nil, email: "", created_at: nil, updated_at: nil>:
+  app/views/devise/sessions/new.html.erb:5:in `view template'
+
+Started POST "/__better_errors/f0c4f62007b09257/variables" for 127.0.0.1 at 2020-07-20 13:28:33 -0700
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:36:10 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 1043)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-20 13:36:10 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 526)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 11728)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 21607)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-07-20 13:36:20 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"uTtTCosO+kedm8Hb+/QH+YE7O1iS+9Y2GcMicMGMevQO44v13vSvdnF4Bg8weCYOHMar6mQdVHiP3vQkawcfiA==", "user"=>{"email"=>"ricardot@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ricardot@gmail.com"], ["LIMIT", 1]]
+Redirected to http://0.0.0.0:3000/posts/new
+Completed 302 Found in 356ms (ActiveRecord: 0.4ms | Allocations: 4731)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:36:20 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.2ms | Allocations: 832)
+  Rendered posts/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1157)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 17.6ms | ActiveRecord: 0.4ms | Allocations: 9594)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-07-20 13:36:32 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"kIHkbkQhnzRx5BRGD8RUQhC/LvWtOpVVVZNlsIXy6SrvPfFOQ/eEmbBkuZXvdajU1C432RBA7G/7Sbfl201EFA==", "post"=>{"body"=>"i hate oranges"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.3ms | Allocations: 639)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 721)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 8902)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-20 13:38:27 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 9.9ms | ActiveRecord: 0.5ms | Allocations: 6690)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:38:29 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 1.4ms | Allocations: 13895)
+
+
+
+ActiveModel::UnknownAttributeError - unknown attribute 'user_id' for Post.:
+  app/controllers/posts_controller.rb:19:in `new'
+
+Started POST "/__better_errors/b3905b39a9e993b4/variables" for 127.0.0.1 at 2020-07-20 13:38:29 -0700
+  [1m[35m (60.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdToUsers (20200720204116)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (43.1ms)[0m  [1m[35mALTER TABLE "users" ADD "user_id" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200720204116"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-07-20 13:44:33 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 858)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 6124)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-20 13:44:35 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms | Allocations: 10610)
+
+
+
+ActiveModel::UnknownAttributeError - unknown attribute 'user_id' for Post.:
+  app/controllers/posts_controller.rb:19:in `new'
+
+Started POST "/__better_errors/ef40ab94a4964672/variables" for 127.0.0.1 at 2020-07-20 13:44:35 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUseridToPost (20200720204608)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (235.1ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200720204608"]]
+  [1m[35m (1269.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
