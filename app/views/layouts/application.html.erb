@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MembersOnly</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>MembersOnly</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-  <%= yield %>
-  </body>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <nav class="site-header sticky-top py-1">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2" href="#" aria-label="Product">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img"
+          viewBox="0 0 24 24" focusable="false">
+          <title>Members Only !</title>
+          <circle cx="12" cy="12" r="10" />
+          <path
+            d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
+        </svg>
+      </a>
+
+      <%= link_to 'New Post', new_post_path, class: "py-2 d-none d-md-inline-block" %>
+
+      <% if user_signed_in? %>
+      <%= link_to 'Edit User', edit_user_registration_path, class: "py-2 d-none d-md-inline-block" %>
+
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "py-2 d-none d-md-inline-block" %>
+
+      <% else %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: "py-2 d-none d-md-inline-block" %>
+
+      <%= link_to 'Sign In', new_user_session_path, class: "py-2 d-none d-md-inline-block" %>
+
+      <% end %>
+    </div>
+  </nav>
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+
 </html>
