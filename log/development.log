@@ -1400,3 +1400,125 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 46ms (Views: 45.2ms | ActiveRecord: 0.3ms | Allocations: 7905)
 
 
+Started GET "/" for 127.0.0.1 at 2020-07-21 23:06:23 +0200
+  [1m[35m (9.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 21.1ms | Allocations: 5462)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 252ms (Views: 185.1ms | ActiveRecord: 2.5ms | Allocations: 26157)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-21 23:06:27 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.2ms | Allocations: 622)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 567.6ms | Allocations: 53963)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 659ms (Views: 631.7ms | ActiveRecord: 1.4ms | Allocations: 70198)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-07-21 23:06:31 +0200
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 122)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 25.3ms | Allocations: 14444)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 103ms (Views: 101.3ms | ActiveRecord: 0.0ms | Allocations: 29625)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-07-21 23:07:11 +0200
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.0ms | Allocations: 11794)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 61.5ms | ActiveRecord: 0.0ms | Allocations: 18923)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-22 16:24:37 +0200
+  [1m[35m (21.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 478.0ms | Allocations: 90238)
+Completed 500 Internal Server Error in 786ms (ActiveRecord: 1.9ms | Allocations: 108610)
+
+
+
+ActionView::Template::Error - undefined method `post_path' for #<#<Class:0x000000000aa237f8>:0x000000000aa21ea8>
+Did you mean?  posts_path
+               font_path
+               root_path:
+  app/views/posts/index.html.erb:19:in `view template'
+
+Started POST "/__better_errors/90e5a44ec46e5f41/variables" for 127.0.0.1 at 2020-07-22 16:24:40 +0200
+Started GET "/" for 127.0.0.1 at 2020-07-22 16:26:10 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 4727)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 328ms (Views: 316.2ms | ActiveRecord: 2.7ms | Allocations: 42291)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-07-22 16:26:12 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 311)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 101ms (Views: 43.1ms | ActiveRecord: 0.4ms | Allocations: 8589)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-07-22 16:26:14 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1060)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 46.5ms | ActiveRecord: 0.4ms | Allocations: 7965)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-22 16:26:15 +0200
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 511)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-22 16:26:15 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 69.0ms | Allocations: 6751)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1754.8ms | Allocations: 75267)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1844ms (Views: 1813.7ms | ActiveRecord: 1.2ms | Allocations: 91903)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-07-22 16:26:23 +0200
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 122)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 554.1ms | Allocations: 16161)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 960ms (Views: 958.1ms | ActiveRecord: 0.0ms | Allocations: 47673)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-22 16:26:26 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 12.3ms | Allocations: 11098)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 81ms (Views: 79.7ms | ActiveRecord: 0.0ms | Allocations: 18252)
+
+
