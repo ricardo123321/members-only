@@ -1522,3 +1522,163 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 81ms (Views: 79.7ms | ActiveRecord: 0.0ms | Allocations: 18252)
 
 
+Started GET "/" for 127.0.0.1 at 2020-07-22 22:55:52 +0200
+  [1m[35m (39.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 110.7ms | Allocations: 5464)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11547ms (Views: 11183.7ms | ActiveRecord: 15.3ms | Allocations: 171126)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-22 22:56:18 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 1574)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-22 22:56:19 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 623)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2164.9ms | Allocations: 75622)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2312ms (Views: 2234.7ms | ActiveRecord: 1.9ms | Allocations: 95030)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-07-22 22:56:26 +0200
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 122)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 112.7ms | Allocations: 14177)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 192ms (Views: 190.0ms | ActiveRecord: 0.0ms | Allocations: 38799)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-07-22 22:57:30 +0200
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"Zj+chRiBnPAV85tlRrHzJQDXSCzRVidBrm3WBTjBz/TGRhcMwkfwzoRSY/aCEwGd6R+iu6qYP81BGQeaL5PH7w==", "user"=>{"username"=>"tester", "email"=>"test@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (79.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 12226)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 833ms (Views: 59.6ms | ActiveRecord: 79.9ms | Allocations: 55711)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-22 22:57:37 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 11115)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 50.6ms | ActiveRecord: 0.0ms | Allocations: 18270)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-07-22 22:57:45 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"1mXIbk/2MOGiUp8nGi4b3RBBedb/IZab6+TUaPJV1qJ1nYhC65CnfDeP0ljEmfyQt8OZzapnFjGRasNpcS7xlw==", "user"=>{"email"=>"test@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@mail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 277ms (ActiveRecord: 0.3ms | Allocations: 2452)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"1mXIbk/2MOGiUp8nGi4b3RBBedb/IZab6+TUaPJV1qJ1nYhC65CnfDeP0ljEmfyQt8OZzapnFjGRasNpcS7xlw==", "user"=>{"email"=>"test@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 11459)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 260ms (Views: 53.3ms | ActiveRecord: 0.0ms | Allocations: 35363)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-07-22 22:57:51 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"FCQk1faEzCHVqCM00yYA27z/8pWvTgxZ3r6R68NXOY3ZOjMWIeYZ4sAsOVxhaKMWCCvnQeJ8XWstSB9ek2VH8g==", "user"=>{"email"=>"test@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@mail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 209ms (ActiveRecord: 0.4ms | Allocations: 2225)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"FCQk1faEzCHVqCM00yYA27z/8pWvTgxZ3r6R68NXOY3ZOjMWIeYZ4sAsOVxhaKMWCCvnQeJ8XWstSB9ek2VH8g==", "user"=>{"email"=>"test@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 11124)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 255ms (Views: 50.6ms | ActiveRecord: 0.0ms | Allocations: 18276)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-07-22 22:57:54 +0200
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 11810)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.0ms | Allocations: 19653)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-07-22 22:58:12 +0200
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"oWvZx6Qb12kW2lE9x//4NR+uMl5Kb7OSuRCYmjw1yJ8BElJOft27V4d7qa4DXQqN9mbYyTGhqx5WZEkFK2fAhA==", "user"=>{"username"=>"tester@m.com", "email"=>"tester@m.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tester@m.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (58.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["email", "tester@m.com"], ["encrypted_password", "$2a$12$PCNStZc54uCzVEOhtjbdD.Gbhf7H3Lkp6ue.iiyhtKIioBDkbHn7W"], ["created_at", "2020-07-22 20:58:13.082702"], ["updated_at", "2020-07-22 20:58:13.082702"], ["username", "tester@m.com"]]
+  [1m[35m (163.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/posts/new
+Completed 302 Found in 517ms (ActiveRecord: 221.5ms | Allocations: 10201)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-22 22:58:13 +0200
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 21.4ms | Allocations: 1267)
+  Rendered posts/new.html.erb within layouts/application (Duration: 24.5ms | Allocations: 1621)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 350ms (Views: 65.4ms | ActiveRecord: 1.7ms | Allocations: 21039)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-07-22 22:58:16 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"3FfcIi8OQa7aZQOTCrn/PzPAgTA9NoD2PJaIoOCWOzYRScvh+GyUbc/hGfu491zyhxSU5HAE0cTPYAYVsKRFSQ==", "post"=>{"body"=>"gndfgdfg"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `block in create'
+  [1m[36mPost Create (7.2ms)[0m  [1m[32mINSERT INTO "posts" ("body", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["body", "gndfgdfg"], ["created_at", "2020-07-22 20:58:16.946858"], ["updated_at", "2020-07-22 20:58:16.946858"], ["user_id", 3]]
+  ↳ app/controllers/posts_controller.rb:30:in `block in create'
+  [1m[35m (182.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `block in create'
+Redirected to http://127.0.0.1:3000/posts/5
+Completed 302 Found in 199ms (ActiveRecord: 190.2ms | Allocations: 4729)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2020-07-22 22:58:17 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:7
+  Rendered posts/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1167)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 42.4ms | ActiveRecord: 0.8ms | Allocations: 8907)
+
+
+Started GET "/posts/5/edit" for 127.0.0.1 at 2020-07-22 22:58:19 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 0.9ms | Allocations: 583)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 844)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 40.4ms | ActiveRecord: 0.6ms | Allocations: 9938)
+
+
