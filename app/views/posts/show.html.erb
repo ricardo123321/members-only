@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @post.body %>
+</p>
+ <%=check_e(@user, current_user, post)%>
+
+<%= link_to 'Back', posts_path %>
