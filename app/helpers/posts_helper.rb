@@ -11,5 +11,5 @@ module PostsHelper
     return unless user_signed_in? && current_user.id == post.user_id
       link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
     end
-  end
 end
+
