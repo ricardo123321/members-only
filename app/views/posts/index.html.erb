@@ -3,25 +3,20 @@
 <h1>Secrets</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <thead>
+        <tr>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-      <% if user_signed_in? %>
-        <td><%= post.user.email %>
+    <tbody>
+        <% @posts.each do |post| %>
+        <tr>
+            <td> <%=check_s(@user, post)%> </td>
+            <td><%= post.body %></td>
+        </tr>
         <% end %>
-        <td><%= post.body %></td>
-        <% if user_signed_in? && current_user.id == post.user_id %>
-
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
+    </tbody>
 </table>
 
 <br>
