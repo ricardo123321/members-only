@@ -51,7 +51,7 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'better_errors', '~> 2.7', '>= 2.7.1'
+gem 'better_errors', '~> 2.8'
 gem 'binding_of_caller'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
